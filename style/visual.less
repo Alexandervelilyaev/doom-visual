@@ -1,0 +1,97 @@
+body {
+    padding: 2vw;
+    background-color: #111;
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.5
+}
+
+#focushint {
+    font-size: 2rem;
+}
+
+.container {
+    display: flex;
+}
+
+.big-holder {
+    position: relative;
+    width: 68vw; /* Allow it to resize based on parent/container */
+    height: 41vw; /* Maintain 16:10 aspect ratio */
+}
+
+#screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.01; /* Hide the canvas */
+}
+
+#gradientScreen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    pointer-events: none; /* Allow clicks to pass through */
+    background-size: 200% 200%; /* Scale the gradient to 640x400 */
+}
+
+/* Media query for screen width less than 700px */
+@media (max-width: 1024px) {
+    .big-holder {
+        width: 94vw; /* 90% of viewport width */
+        height: calc(94vw * 10 / 16); /* Maintain 16:10 aspect ratio */
+    }
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -2.5rem;
+    flex-wrap: wrap;
+    gap: 1vw;
+    user-select: none;
+}
+
+.left-controls {
+    display: flex;
+    gap: 1vw;
+    flex-wrap: wrap;
+}
+
+.arrow-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-top: -1rem
+}
+
+.arrow-row {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+}
+
+
+.controls button {
+    min-width: 10vw;
+    min-height: 10vw;
+    font-weight: bold;
+    border: none;
+    border-radius: 3vw;
+    color: #fff;
+    background-color: #550000; /* DOOM-like red */
+    box-shadow: 0 0 5px #000;
+    transition: background-color 0.2s ease;
+    user-select: none;
+}
+
+.controls button:hover {
+    background-color: #aa0000;
+    cursor: pointer;
+}
+
+.controls button:active {
+    background-color: #770000;
+}
