@@ -1,6 +1,6 @@
 {
   "name": "visual",
-  "description": "default_template_value",
+  "description": "Doom Power BI custom visual",
   "version": "1.0.0.0",
   "private": true,
   "scripts": {

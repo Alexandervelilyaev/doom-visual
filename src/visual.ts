@@ -151,7 +151,6 @@ export class Visual implements IVisual {
       this.formattingSettingsService = new FormattingSettingsService();
       this.root = d3.select(options.element);
 
-      
         var bigHolder = this.root
           .append("div")
           .classed("big-holder", true);
@@ -325,13 +324,7 @@ WebAssembly.instantiate(wasmBytes, importObject).then(
 
     public update(options: VisualUpdateOptions) {
         this.formattingSettings = this.formattingSettingsService.populateFormattingSettingsModel(VisualFormattingSettingsModel, options.dataViews[0]);
-            canvas.focus()
-
-            // this.root.on("click", () => {
-            //   pressKey(13);
-
-
-            // });
+        canvas.focus()
     }
 
     /**
